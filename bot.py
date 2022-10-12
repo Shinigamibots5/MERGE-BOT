@@ -212,7 +212,7 @@ async def start_handler(c: Client, m: Message):
 ─────────────────
 ✪ Hit /help to know more
 ─────────────────
-!\n\n**🔮 Owner 🍭: 🔆 @{Config.OWNER_USERNAME}
+**🔮 Owner 🍭: 🔆 @{Config.OWNER_USERNAME}
 ─────────────────
 **""",
          quote=True,
