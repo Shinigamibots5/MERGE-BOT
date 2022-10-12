@@ -53,7 +53,7 @@ class MergeBot(Client):
     def start(self):
         super().start()
         try:
-            self.send_message(chat_id=int(Config.OWNER), text="""**<b>
+            self.send_message(chat_id=int(Config.OWNER), text="""**
 	──────『[ पानीपुरी ](https://te.legra.ph/file/05946f475f7364a957ec5.mp4)』─────**""")
         except Exception as err:
             LOGGER.error("Boot alert failed! Please start bot in PM")
