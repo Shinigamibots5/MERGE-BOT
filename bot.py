@@ -212,9 +212,7 @@ async def start_handler(c: Client, m: Message):
 ─────────────────
 ✪ Hit /help to know more
 ─────────────────
-
-!\n\n**Owner: 🔆 @{Config.OWNER_USERNAME}
-
+!\n\n**🔮 Owner 🍭: 🔆 @{Config.OWNER_USERNAME}
 ─────────────────
 **""",
          quote=True,
@@ -226,7 +224,7 @@ async def start_handler(c: Client, m: Message):
                         "⚡️AK IMAX HUB⚡️", url="https://t.me/akimaxmovies"
                     ),
                     InlineKeyboardButton(
-                        "🔮 DEVELOPER 🍭", url=f"https://t.me/{Config.OWNER_USERNAME}"
+                        "🌟 DEVELOPER ⛔", url=f"https://t.me/{Config.OWNER_USERNAME}"
                     ),
                 ],
                 [InlineKeyboardButton("Close 🔐", callback_data="close")],
