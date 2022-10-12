@@ -199,9 +199,7 @@ async def start_handler(c: Client, m: Message):
         text=f"""
  ──『[ पानीपुरी ](https://te.legra.ph/file/51d142cd1c5817832dd5c.jpg)』
  
- 
 *Hey Sweet Heart!!❤️ !*
-
  **{m.from_user.first_name}**
 ─────────────────
 ⚡ I Am Merge Bot 🤖 Use me and I will merge all files With My Magic...
@@ -212,7 +210,7 @@ async def start_handler(c: Client, m: Message):
 ✪ [ ⚡️AK IMAX HUB⚡️ ](http://t.me/akimaxmovies) 
 ✪ [ ⚡️AK IMAX 2.0⚡️ ](http://t.me/akimax)
 ─────────────────
-✪ ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ ✌️.
+✪ Hit /help to know more
 ─────────────────
 
 !\n\n**Owner: 🔆 @{Config.OWNER_USERNAME}
