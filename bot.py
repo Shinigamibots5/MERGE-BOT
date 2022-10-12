@@ -53,8 +53,8 @@ class MergeBot(Client):
     def start(self):
         super().start()
         try:
-            self.send_message(chat_id=int(Config.OWNER), text="""**<b>Bot Started!
-	    ──『[ पानीपुरी ](https://te.legra.ph/file/04367f9543b7608c941cf.jpg)』──**""")
+            self.send_message(chat_id=int(Config.OWNER), text="""**<b>
+	──────『[ पानीपुरी ](https://te.legra.ph/file/04367f9543b7608c941cf.jpg)』─────**""")
         except Exception as err:
             LOGGER.error("Boot alert failed! Please start bot in PM")
         return LOGGER.info("Bot Started!")
@@ -207,17 +207,16 @@ async def start_handler(c: Client, m: Message):
 ⚡ I Am Merge Bot 🤖 Use me and I will merge all files With My Magic...
 ────────────────────────
 ✪ ɪ ᴀᴍ पानीपुरी sᴜᴘᴇʀ ᴀᴅᴠᴀɴᴄᴇᴅ ʙᴏᴛ ᴡɪᴛʜ ᴜsᴇғᴜʟʟ ғᴇᴀᴛᴜʀᴇ use ᴛʜᴇɴ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀs ʙᴜᴅᴅʏ 😔
-────────────────────────
-× * पानीपुरी  ɪs ᴀ ɴᴀᴍᴇ ᴏғ real authentic Taste!!!
-× *ғɪʀsᴛ ᴛᴇʟᴇɢʀᴀᴍ ʙᴏᴛ ʙᴀsᴇᴅ ᴏɴ ᴍᴏɴɢᴏᴅʙ ᴅᴀᴛᴀʙsᴀᴇ* ❣️
+
 ────────────────────────
 ✘ JOIN OFFICIAL NETWORK ✘
-✪ [ ⚡️AK IMAX HUB⚡️ ](http://t.me/akimaxmovies) - [⚡️AK Imax 2.0⚡️](http://t.me/akimax)
+✪ [ ⚡️AK IMAX HUB⚡️ ](http://t.me/akimaxmovies) 
+✪ [ ⚡️AK IMAX 2.0⚡️ ](http://t.me/akimax)
 ────────────────────────
 ✪ ʜɪᴛ /help ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ ✌️.
 ────────────────────────
 
-!\n\n**Owner: 🈲 @{Config.OWNER_USERNAME}
+!\n\n**Owner: 🔆 @{Config.OWNER_USERNAME}
 
 ────────────────────────
 **""",
