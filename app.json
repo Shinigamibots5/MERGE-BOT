@@ -40,10 +40,10 @@
             "description": "MongoDB Database URI for Saving UserID for Broadcast.",
             "value": "mongodb+srv://ticel98214:asdfggjkl@cluster0.hm6jsk4.mongodb.net/?retryWrites=true&w=majority"
         },
-        "PASSWORD": {
+        "passwd": {
             "description": "telegram pass if any ",
             "required": false,
-            "value": "-mypassword"
+            "value": "Dudu"
         },
         "LOGCHANNEL": {
             "description": "Logs Channel ID for some Tracking XD. Example: -100123456789",
