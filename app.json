@@ -1,0 +1,75 @@
+{
+	"name": "Telegram Video Merge Bot",
+	"description": "A Telegram Video Merge Bot in Pyrogram by DUDU",
+	"keywords": [
+		"telegram",
+		"video",
+		"merge",
+		"bot"
+	],
+	"repository": "https://github.com/Shinigamibots5/MERGE-BOT",
+	"website": "https://telegram.dog/bae_wafaaa",
+	"stack": "container",
+	"env":
+	{
+	"CONFIG_FILE_URL": {
+            "description": "Make Config on gist and paste raw link ",
+	    "required": false
+	},
+	"TELEGRAM_API": {
+            "description": "Get this value from my.telegram.org",
+            "value": "8942928"
+        },
+        "API_HASH": {
+            "description": "Get this value from my.telegram.org",
+            "value": "8edc5a0d1939f3a5de5dc44d021d52ca"
+        },
+        "BOT_TOKEN": {
+            "description": "Get this from @BotFather XD",
+            "value": "5758243579:AAGto5tH9QQ_JH1U5JYsDbaXzVErYzWZOMk"
+        },
+        "OWNER": {
+            "description": "Bot Owner UserID",
+            "value": "5143506371"
+	},
+        "OWNER_USERNAME": {
+            "description": " Owner username without @ ",
+            "value": "Bae_wafaaa"
+        },
+        "DATABASE_URL": {
+            "description": "MongoDB Database URI for Saving UserID for Broadcast.",
+            "value": "mongodb+srv://ticel98214:asdfggjkl@cluster0.hm6jsk4.mongodb.net/?retryWrites=true&w=majority"
+        },
+        "PASSWORD": {
+            "description": "telegram pass if any ",
+            "required": false,
+            "value": "-mypassword"
+        },
+        "LOGCHANNEL": {
+            "description": "Logs Channel ID for some Tracking XD. Example: -100123456789",
+            "value": "-1001707154332"
+        },
+        "USER_SESSION_STRING": {
+            "description": "Premium account session string to upload upto 4GB requires: LOGCHANNEL ",
+            "required": false,
+            "value": ""
+        },
+        "UPSTREAM_REPO": {
+            "description": "If you dont know this, Leave as it is",
+            "value": "https://github.com/Shinigamibots5/MERGE-BOT",
+            "required": true
+        },
+        "UPSTREAM_BRANCH": {
+           "description": "Upstream Repo's Branch Name",
+           "value": "Shinigami",
+           "required": true
+        }
+		
+	},
+	"formation": {
+		"worker": {
+			"quantity": 1,
+			"size": "free"
+		}
+	}
+}
