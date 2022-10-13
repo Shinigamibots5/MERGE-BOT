@@ -124,6 +124,11 @@ async def stats_handler(c: Client, m: Message):
     disk = psutil.disk_usage("/").percent
     stats = (
         f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
+	f"<b>│</b>\n"
+	f"<b>UPSTREAM AND BOT STATUS</b>\n"
+        f"<b>┌ Commit Date:</b> {last_commit}</b>\n"
+        f"<b>├ Bot Uptime:</b> {get_readable_time(time() - botStartTime)}</b>\n"
+        f"<b>└ OS Uptime:</b> {get_readable_time(time() - boot_time())}</b>\n"
         f"<b>│</b>\n"
         f"<b>├⏳ Bot Uptime : {currentTime}</b>\n"
         f"<b>├💾 Total Disk Space : {total}</b>\n"
@@ -135,6 +140,8 @@ async def stats_handler(c: Client, m: Message):
         f"<b>├⚙️ RAM : {memory}%</b>\n"
         f"<b>╰💿 DISK : {disk}%</b>"
     )
+    #sendPhoto(stats, context.bot, update.message, PICS_STATS)
+
     await m.reply_text(text=stats, quote=True)
 
 
@@ -188,7 +195,7 @@ async def start_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Upss...Not authorized user **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             return
@@ -197,7 +204,7 @@ async def start_handler(c: Client, m: Message):
         user.set()
     res = await m.reply_text(
         text=f"""
- ──『[ पानीपुरी ](https://te.legra.ph/file/51d142cd1c5817832dd5c.jpg)』
+ ──『[ पानीपुरी ]』──
  
 *Hey Sweet Heart!!❤️ !*
  **{m.from_user.first_name}**
@@ -421,7 +428,7 @@ async def photo_handler(c: Client, m: Message):
     if m.from_user.id != int(Config.OWNER):
         if user.allowed is False:
             res = await m.reply_text(
-                text=f"Hi **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
+                text=f"Upss...Not authorized user **{m.from_user.first_name}**\n\n 🛡️ Unfortunately you can't use me\n\n**Contact: 🈲 @{Config.OWNER_USERNAME}** ",
                 quote=True,
             )
             del user
@@ -441,12 +448,12 @@ async def photo_handler(c: Client, m: Message):
 async def help_msg(c: Client, m: Message):
     await m.reply_text(
         text="""**Follow These Steps:
-
-1) Send me the custom thumbnail (optional).
-2) Send two or more Your Videos Which you want to merge
-3) After sending all files select merge options
-4) Select the upload mode.
-5) Select rename if you want to give custom file name else press default**""",
+	
+┌ Send custom thumbnail (optional).
+├ Send multiple
+├ After all done, select merge options
+├ Select the upload mode
+└ Rename for custom file name**""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("Close 🔐", callback_data="close")]]
@@ -458,15 +465,14 @@ async def help_msg(c: Client, m: Message):
 async def about_handler(c: Client, m: Message):
     await m.reply_text(
         text="""
-**WHAT'S NEW:**
-+ Upload to drive using your own rclone config
-+ Merged video preserves all streams of the first video you send (i.e. all audiotracks/subtitles)
-**FEATURES:**
-+ Merge Upto 10 videos in one
-+ Upload as document/video
-+ Custom thumbnail support
-+ Users can login to bot using password
-+ Owner can broadcast message to all users
+Video Merger
+┌ Upload to drive using your rclone config
+├ Merged video preserves the first video
+├ Merge upto 10 videos
+├ Upload as document/video
+├ Custom thumbnail support
+├ Users can login to bot using password
+└ Owner can broadcast message to all users
 		""",
         quote=True,
         reply_markup=InlineKeyboardMarkup(
