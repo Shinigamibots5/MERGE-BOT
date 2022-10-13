@@ -128,7 +128,7 @@ async def stats_handler(c: Client, m: Message):
         return sendMessage("<b>Upss...</b> private mode active! Contact the owner to make it public access!", context.bot, update.message)
     last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd\n<b>├ Commit Change:</b> %cr'"],
                                shell=True).decode() if ospath.exists('.git') else 'No UPSTREAM_REPO
-	(stats = f'''
+	stats = f'''
         f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
 	f"<b>│</b>\n"
 	f"<b>UPSTREAM AND BOT STATUS</b>\n"
