@@ -440,8 +440,7 @@ async def photo_handler(c: Client, m: Message):
 @mergeApp.on_message(filters.command(["help"]) & filters.private)
 async def help_msg(c: Client, m: Message):
     await m.reply_text(
-        text="""**Follow These Steps:
-	
+        text="""**Follow These Steps:	
 ┌ Send custom thumbnail (optional).
 ├ Send multiple
 ├ After all done, select merge options
