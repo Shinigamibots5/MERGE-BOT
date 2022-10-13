@@ -122,12 +122,9 @@ async def stats_handler(c: Client, m: Message):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
-    stats =
-    
-	(stats = f'''
+    stats = (
         f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
-	f"<b>│</b>\n"
-	
+        f"<b>│</b>\n"
         f"<b>├⏳ Bot Uptime : {currentTime}</b>\n"
         f"<b>├💾 Total Disk Space : {total}</b>\n"
         f"<b>├📀 Total Used Space : {used}</b>\n"
@@ -137,9 +134,7 @@ async def stats_handler(c: Client, m: Message):
         f"<b>├🖥 CPU : {cpuUsage}%</b>\n"
         f"<b>├⚙️ RAM : {memory}%</b>\n"
         f"<b>╰💿 DISK : {disk}%</b>"
-   ''' )
-    #sendPhoto(stats, context.bot, update.message, PICS_STATS)
-
+    )
     await m.reply_text(text=stats, quote=True)
 
 
