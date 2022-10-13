@@ -123,19 +123,11 @@ async def stats_handler(c: Client, m: Message):
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
     stats =
-    def stats(update, context):
-    if PRIVATE_MODE:
-        return sendMessage("<b>Upss...</b> private mode active! Contact the owner to make it public access!", context.bot, update.message)
-    last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd\n<b>├ Commit Change:</b> %cr'"],
-                               shell=True).decode() if ospath.exists('.git') else 'No UPSTREAM_REPO
-	stats = f'''
+    
+	(stats = f'''
         f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
 	f"<b>│</b>\n"
-	f"<b>UPSTREAM AND BOT STATUS</b>\n"
-        f"<b>┌ Commit Date:</b> {last_commit}</b>\n"
-        f"<b>├ Bot Uptime:</b> {get_readable_time(time() - botStartTime)}</b>\n"
-        f"<b>└ OS Uptime:</b> {get_readable_time(time() - boot_time())}</b>\n"
-        f"<b>│</b>\n"
+	
         f"<b>├⏳ Bot Uptime : {currentTime}</b>\n"
         f"<b>├💾 Total Disk Space : {total}</b>\n"
         f"<b>├📀 Total Used Space : {used}</b>\n"
