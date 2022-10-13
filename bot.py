@@ -122,7 +122,13 @@ async def stats_handler(c: Client, m: Message):
     cpuUsage = psutil.cpu_percent(interval=0.5)
     memory = psutil.virtual_memory().percent
     disk = psutil.disk_usage("/").percent
-    stats = (
+    stats =
+    def stats(update, context):
+    if PRIVATE_MODE:
+        return sendMessage("<b>Upss...</b> private mode active! Contact the owner to make it public access!", context.bot, update.message)
+    last_commit = check_output(["git log -1 --date=short --pretty=format:'%cd\n<b>├ Commit Change:</b> %cr'"],
+                               shell=True).decode() if ospath.exists('.git') else 'No UPSTREAM_REPO
+	(stats = f'''
         f"<b>╭「 💠 BOT STATISTICS 」</b>\n"
 	f"<b>│</b>\n"
 	f"<b>UPSTREAM AND BOT STATUS</b>\n"
@@ -139,7 +145,7 @@ async def stats_handler(c: Client, m: Message):
         f"<b>├🖥 CPU : {cpuUsage}%</b>\n"
         f"<b>├⚙️ RAM : {memory}%</b>\n"
         f"<b>╰💿 DISK : {disk}%</b>"
-    )
+   ''' )
     #sendPhoto(stats, context.bot, update.message, PICS_STATS)
 
     await m.reply_text(text=stats, quote=True)
