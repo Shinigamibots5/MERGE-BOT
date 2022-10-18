@@ -33,12 +33,15 @@ async def userSettings(
         elif usettings.merge_mode == 3:
             userMergeModeId = 3
             userMergeModeStr = "Video 🎥 + Subtitle 📜"
+        elif usettings.merge_mode == 4:
+            userMergeModeId = 4
+            userMergeModeStr = "Extract" 
         if usettings.edit_metadata:
             editMetadataStr = "✅"
         else:
             editMetadataStr = "❌"
         uSettingsMessage = f"""
-  <u>Merge Bot settings </u>
+  <b>Merge Bot settings </u>
     ┌**🐧 <a href='tg://user?id={uid}'>{fname}</a>
     ├**⭕️ ID: <u>{usettings.user_id}</u>**
     ├**{'⚡️' if usettings.allowed else '❗'} Allowed: <u>{usettings.allowed}</u>**
@@ -55,7 +58,7 @@ async def userSettings(
             ],
             [
                 "tryotherbutton",
-                f"ch@ng3M0de_{uid}_{(userMergeModeId%3)+1}",
+                f"ch@ng3M0de_{uid}_{(userMergeModeId%4)+1}",
                 "tryotherbutton",
                 f"toggleEdit_{uid}",
                 "close",
